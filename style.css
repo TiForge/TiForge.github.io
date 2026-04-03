@@ -1,0 +1,593 @@
+
+:root {
+    --topbar-top-top-color: #fefefe;
+    --topbar-top-bot-color: #e5eaf5;
+    --topbar-mid-color: #d4dbee;
+    --topbar-bot-color: #e1e6f6;
+    --topbar-bor-color: #b6bccc;
+    --topbar-sha-color: #f0f0f0;
+
+    --topbar-height: 31px;
+
+
+    --sidebar-color: #eaf0f8;
+    --sidebar-high-color: #e6eef7;
+
+    
+    --blue-button-top-top-color: #498ac5;
+    --blue-button-top-mid-color: #2d66b1;
+    --blue-button-bot-mid-color: #1a4188;
+    --blue-button-bot-bot-color: #409acf;
+    --blue-button-bor-all-color: #7eacd7;
+    --blue-button-bor-bot-color: #5278c3;
+
+    
+    --gray-button-top-color: #dbebff;
+    --gray-button-bot-color: #c9d5e7;
+    --gray-button-bor-color: #b0bcdd;
+}
+
+* {
+    background: transparent;
+    color: black;
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial;
+    text-decoration: none;
+
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+a, p, li {
+    background: transparent;
+}
+
+button, a {
+    cursor: pointer;
+}
+
+.Topbar {
+    width: 100%;
+    height: 19px;
+    background: linear-gradient(180deg, var(--topbar-top-top-color) 0%, var(--topbar-top-bot-color) 35%, var(--topbar-mid-color) 35%, var(--topbar-bot-color) 100%);
+    box-sizing: border-box;
+    padding: 2px;
+    border: 1px solid var(--topbar-top-top-color);
+    border-bottom: 1px solid var(--topbar-bor-color);
+    box-shadow: 0px 0px 1px 1px var(--topbar-sha-color);
+}
+
+#SiteTopbar {
+    height: var(--topbar-height);
+    background: linear-gradient(180deg, var(--topbar-top-top-color) 0%, var(--topbar-top-bot-color) 50%, var(--topbar-mid-color) 50%, var(--topbar-bot-color) 100%);
+    border-bottom: 2px solid var(--topbar-bor-color);
+}
+
+.TopbarButton {
+    background: transparent;
+    border-radius: 3px;
+    height: 100%;
+    border: 1px solid transparent;
+    color: #2f2f2f;
+    padding: 0px 20px 0px 20px;
+    box-sizing: border-box;
+}
+
+.TopbarButton:hover {
+    background: linear-gradient(180deg, var(--gray-button-top-color) 50%, var(--gray-button-bot-color) 50%);;
+    border: 1px solid var(--gray-button-bor-color);
+}
+
+.Content {
+    width: 100%;
+    height: calc(100vh - var(--topbar-height));
+    background: black;
+    display: flex;
+}
+
+/* ---------------------------- PAGE CSS DIFFERENCES ---------------------------- */
+
+/* ------------- Home -------------*/
+
+.HomeBanner {
+    height: 250px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 2px solid var(--topbar-bor-color);
+}
+
+.HomeBanner img {
+    width: 100%;
+    filter: drop-shadow(0px 0px 5px black);
+}
+
+.HomeBannerBackdrop {
+    position: absolute;
+    width: 100%;
+    height: inherit;
+    background: transparent;
+
+    mask: linear-gradient(90deg, transparent 0%, black 50%, transparent 100%);
+    backdrop-filter: blur(20px);
+}
+
+
+
+
+.HomeBannerAnimation {
+    position: absolute;
+    width: 100%;
+    height: inherit;
+}
+
+.AnimationRow {
+    width: 100%;
+    height: 30%;
+    margin: 5px 0px 8px 0px;
+    display: flex;
+}
+
+.AnimationBox {
+    position: absolute;
+    height: inherit;
+    aspect-ratio: 1 / 1;
+    background: #00007730;
+    backdrop-filter: blur(3px);
+    box-sizing: border-box;
+    border: 1px solid var(--topbar-bor-color);
+    border-radius: 15px;
+}
+
+.AnimationBox img {
+    width: calc(100% - 10px);
+    padding: 5px;
+}
+
+@keyframes AnimationFade {
+  0% {background: #881a1a;}
+  25% {background: #1a883f;}
+  50% {background: #1a4188;}
+  75% {background: #88741a;}
+  100% {background: #881a1a;}
+}
+
+.HomeBannerContent {
+    position: absolute;
+    width: 100%;
+    height: inherit;
+    mask: radial-gradient(circle, black 15%, #00000011 50%, #00000077 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation-name: AnimationFade;
+    animation-iteration-count: infinite;
+    animation-duration: 4s;
+}
+
+.HomeBannerNamePlate {
+    background: transparent;
+}
+
+.HomeBannerNamePlate img {
+    width: 150px;
+    margin-left: calc(50% - (150px / 2));
+}
+
+.HomeBannerNamePlate p {
+    background: transparent;
+    text-align: center;
+    text-shadow: 0px 0px 10px black;
+}
+
+.HomeBannerNamePlate .NamePlateName {
+    font-weight: bold;
+    font-size: 35px;
+    margin-bottom: 3px;
+    color: white;
+}
+
+.HomeBannerNamePlate .NamePlateTag {
+    font-weight: bold;
+    color: #f0f0f0;
+}
+
+.SiteBody {
+    box-sizing: border-box;
+    overflow-x: auto;
+    display: flex;
+}
+
+
+
+.TopicPane, #SoftwarePane {
+    flex: 1;
+    border: 1px solid var(--topbar-bor-color);
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px;
+    background: linear-gradient(180deg, white 50%, var(--topbar-top-bot-color) 100%);
+    box-shadow: 0px 4px 5px 0px lightgray;
+    margin: 50px 50px 15px 50px;
+}
+
+.ShoutoutPane {
+    flex: 1;
+    max-width: 450px;
+    border: 1px solid var(--topbar-bor-color);
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px;
+    background: linear-gradient(180deg, white 50%, var(--topbar-top-bot-color) 100%);
+    box-shadow: 0px 4px 5px 0px lightgray;
+    margin: 50px 50px 15px 50px;
+}
+
+.ProjectsPane, .GamesPane {
+    flex: 1;
+    border: 1px solid var(--topbar-bor-color);
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px;
+    background: linear-gradient(180deg, white 50%, var(--topbar-top-bot-color) 100%);
+    box-shadow: 0px 4px 5px 0px lightgray;
+    margin: 15px;
+}
+
+.NewsPane {
+    border: 1px solid var(--blue-button-top-mid-color);
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px;
+    width: 450px;
+    max-width: 450px;
+    background: linear-gradient(180deg, white 50%, var(--topbar-top-bot-color) 100%);
+    box-shadow: 0px 4px 5px 0px lightgray;
+    margin: 50px;
+}
+
+.NewsPane li {
+    margin-left: 15px;
+    padding: 5px 0px 5px 0px;
+    border-bottom: 1px dotted var(--topbar-bor-color);;
+}
+
+.PaneHeader {
+    background: linear-gradient(0deg, white 45%, transparent 100%);
+    color: var(--blue-button-top-mid-color);
+    font-weight: normal;
+    position: relative;
+    top: -32px;
+    width: fit-content;
+    padding: 0px 6px 0px 6px;
+    font-size: 32px;
+    margin-bottom: -32px;
+}
+
+
+
+.SoftwareButton {
+    display: flex;
+    width: 100%;
+}
+
+.SoftwareButton img {
+    margin: 5px;
+    height: 90px;
+    background: transparent;
+}
+
+.SoftwareButtonText {
+    padding: 7px;
+    width: 100%;
+    background: transparent;
+    border-left: 3px dotted var(--topbar-bor-color);
+    border-bottom: 1px dotted var(--topbar-bor-color);
+}
+
+.SoftwareButtonTitle {
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 5px;
+}
+
+/* ------------- Software -------------*/
+
+#Projects, #Games {
+    padding-bottom: 10px;
+}
+
+.SoftwareBanner {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    height: 85px;
+    background: linear-gradient(180deg, var(--blue-button-top-top-color) 0%, var(--blue-button-top-mid-color) 40%, var(--blue-button-bot-mid-color) 40%, var(--blue-button-bot-bot-color) 100%);
+    border: 2px solid var(--blue-button-bor-all-color);
+    border-bottom: 2px solid var(--blue-button-bor-bot-color);
+    color: white;
+    font-size: 35px;
+    text-shadow: 0px 0px 10px black;
+}
+
+.SoftwareBannerStreaks {
+    width: 100%;
+    height: 100vh;
+    margin: -5px;
+    position: absolute;
+    opacity: 50%;
+}
+    
+
+.SoftwareBannerImg {
+    height: 75px;
+    background: transparent;
+    z-index: 1;
+}
+
+#PrioritySoftwareButton {
+    margin: 5px;
+    max-width: 500px;
+    border: 1px solid var(--topbar-bor-color);
+    background: linear-gradient(180deg, white 50%, var(--topbar-top-bot-color) 100%);
+    box-shadow: 0px 4px 5px 0px lightgray;
+    border-radius: 5px;
+}
+
+#PrioritySoftwarePane {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 10px;
+}
+
+/* ------------- Contact -------------*/
+
+#Contact {
+    padding-bottom: 10px;
+}
+
+/* ------------- Focused Software -------------*/
+
+
+#SingleSoftwareBanner {
+    justify-content: center;
+    height: 140px;
+    overflow: hidden;
+}
+
+.SoftwareBannerContent {
+    background: transparent;
+}
+
+.SoftwareBannerContent img {
+    height: 100px;
+    background: transparent;
+    position: relative;
+    left: calc(50% - 50px);
+    top: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.SoftwareBannerContent p {
+    color: white;
+    position: relative;
+    bottom: 10px;
+    text-shadow: 0px 0px 10px black;
+}
+
+.SoftwareBodyContent {
+    display: flex;
+    width: 100%;
+}
+
+.DownloadPane {
+    display: grid;
+    max-width: 450px;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    background: transparent;
+    padding: 5px;
+}
+
+.DownloadButton {
+    background: transparent;
+    border: 1px dotted var(--topbar-bor-color);
+    border-radius: 10px;
+    padding: 5px;
+    max-width: 35%;
+}
+
+.DownloadButton img {
+    background: transparent;
+    filter: drop-shadow(0px 0px 2px black);
+    width: 75%;
+}
+
+.DownloadButtonVersion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.DownloadButtonVersionNumber {
+    margin-left: 4px;
+}
+
+#SoftwareBugsPane {
+    border: 1px solid maroon;
+}
+
+#Critical {
+    color: red;
+}
+
+.SidebarSpacer {
+    flex: 1;
+}
+
+.InfoPane {
+    margin: 50px;
+}
+
+.InfoRow {
+    display: flex;
+    align-items: center;
+    padding-bottom: 50px;
+    width: 100%;
+}
+
+.InfoPane h2 {
+    color: var(--blue-button-top-mid-color);
+    padding-bottom: 10px;
+}
+
+.InfoRow p, li {
+    padding: 15px;
+    flex: 1;
+}
+
+.InfoRow img {
+    max-width: 50%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px 0px gray;
+}
+
+.LeftPane {
+    width: 100%;
+}
+
+.RightPane {
+    background: linear-gradient(240deg, var(--sidebar-color) 10%, var(--sidebar-high-color) 11%, var(--sidebar-color) 20%, var(--sidebar-color) 40%, var(--sidebar-high-color) 41%, var(--sidebar-color) 60%, var(--sidebar-color) 95%, var(--sidebar-high-color) 96%);
+    min-height: calc(100vh - 154px - var(--topbar-height));
+    display: flex;
+    flex-direction: column;
+}
+
+.Disclaimer {
+    margin: 10px;
+    border-radius: 10px;
+    border: 2px solid red;
+    box-shadow: 0px 4px 5px 0px gray;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    max-width: 530px;
+    background: linear-gradient(240deg, black 10%, #222222 11%, black 20%, black 40%, #222222 41%, black 60%, black 95%, #222222 96%);;
+    height: 100px;
+    width: inherit;
+}
+
+.Disclaimer p, h5 {
+    color: lightgray;
+}
+
+.CopyrightInfo {
+    display: flex;
+    align-items: center;
+}
+
+.CopyrightInfo p {
+    flex: 1;
+}
+
+.CopyrightInfo img {
+    height: 40px;
+}
+
+/* ------------------------------------------------------------------------------ */
+
+.BodyContent {
+    background: linear-gradient(white 50%, #edf1fa 100%);
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.Sidebar {
+    box-sizing: border-box;
+    width: 200px;
+    min-width: 200px;
+    height: calc(100vh - var(--topbar-height));
+    background: linear-gradient(240deg, var(--sidebar-color) 10%, var(--sidebar-high-color) 11%, var(--sidebar-color) 20%, var(--sidebar-color) 40%, var(--sidebar-high-color) 41%, var(--sidebar-color) 60%, var(--sidebar-color) 95%, var(--sidebar-high-color) 96%);
+    border-right: 1px solid var(--topbar-bor-color);
+}
+
+.Divider {
+    text-align: left;
+    width: calc(100% - 5px);
+    margin: 0px 4px 2px 0px;
+    padding: 5px;
+    background: linear-gradient(180deg, var(--blue-button-top-top-color) 0%, var(--blue-button-top-mid-color) 40%, var(--blue-button-bot-mid-color) 40%, var(--blue-button-bot-bot-color) 100%);
+    border: 2px solid var(--blue-button-bor-all-color);
+    border-bottom: 2px solid var(--blue-button-bor-bot-color);
+    border-radius: 0px 5px 5px 0px;
+    color: white;
+    display: flex;
+    align-items: center;
+    transition: all .4s;
+}
+
+.Divider:hover {
+    background: linear-gradient(180deg, #409acf 0%, #4079cf 40%, var(--blue-button-top-mid-color) 40%, #53e5ff 100%);
+    box-shadow: 0px 0px 20px 0px cyan;
+}
+
+.Divider:active {
+    background: linear-gradient(180deg, var(--blue-button-top-top-color) 0%, var(--blue-button-top-mid-color) 40%, var(--blue-button-bot-mid-color) 40%, var(--blue-button-bot-bot-color) 100%);
+}
+
+
+.Divider img {
+    background: transparent;
+    margin: 0px 4px 0px 7px;
+}
+
+
+.SidebarButton {
+    box-sizing: border-box;
+    width: calc(100% - 4px);
+    border: 1px solid transparent;
+    border-radius: 3px;
+    background-color: transparent;
+    padding: 5px 5px 5px 20px;
+    margin: 2px;
+    display: flex;
+    align-items: center;
+}
+
+#SidebarButtonActive {
+    box-sizing: border-box;
+    width: calc(100% - 4px);
+    border: 1px solid var(--gray-button-bor-color);
+    border-radius: 3px;
+    background: linear-gradient(180deg, var(--gray-button-top-color) 45%, var(--gray-button-bot-color) 50%);
+    padding: 5px 5px 5px 20px;
+    margin: 2px;
+    display: flex;
+    align-items: center;
+}
+
+.SidebarButton:hover {
+    background: linear-gradient(180deg, var(--gray-button-top-color) 45%, var(--gray-button-bot-color) 50%);
+    border: 1px solid var(--gray-button-bor-color);
+}
+
+.SidebarButton:active {
+    background: transparent;
+}
+
+.SidebarButton img {
+    background-color: transparent;
+    margin-right: 7px;
+    height: 20px;
+}

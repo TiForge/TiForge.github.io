@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        TiForge - ReBriefcase
+    </title>
+    <link rel="icon" type="image/x-icon" href="Resources/Profile.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id="Topbar">
+    </div>
+    <div class="Content">
+        <div id="Sidebar">
+        </div>
+        <div class="BodyContent" id="ProjectsReBriefcase">
+            <div class="SoftwareBanner" id="SingleSoftwareBanner">
+                <img src="Resources/Glass.png" class="SoftwareBannerStreaks">
+                <div class="SoftwareBannerContent">
+                    
+                    <img src="Resources/HighRes/Software/Briefcase.png">
+                    <p>
+                        ReBriefcase
+                    </p>
+                </div>
+            </div>
+            <div class="SoftwareBodyContent">
+                <div class="LeftPane">
+                    <div class="TopicPane" id="SoftwareTopic">
+                        <h1 class="PaneHeader">
+                            What is ReBriefcase?
+                        </h1>
+                        <p>
+                            ReBriefcase is a small tool that lives in your context menu. What it does is recreate the briefcases that could be found on Windows 7.
+                        </p>
+                    </div>
+                    <div class="InfoPane">
+                        <h2>How to use ReBriefcase</h2>
+                        <div class="InfoRow">
+                            <img src="Resources/Screenshots/projects/ReBriefcase/Screenshot_01.png">
+                            <p>
+                                The way ReBriefcase works is it turns folders into briefcases. These "briefcases" however, are still folders, they just have metadata and an icon embedded. This lets you use ReBriefcase briefcases fairly similarly to Windows briefcases.
+                            </p>
+                        </div>
+                        <h2>The sync engine</h2>
+                        <div class="InfoRow">
+                            <div>    
+                                <p>
+                                    ReBriefcase has two sync engines. "Safe" and "Unsafe"
+                                </p>
+                                <li>
+                                    The "Unsafe" sync engine is what ReBriefcase uses when it does not have a point of reference (from a previous sync). It does not have conflict detection, and prioritizes the largest version of files to try and save the most data possible.
+                                </li>
+                                <li>
+                                    The "Safe" sync engine is what ReBriefcase uses when does have a point of reference (from a previous sync). It does have conflict detection, but unfortunately as of now there is no way to keep multiple versions of the same file.
+                                </li>
+                            </div>
+                            <img src="Resources/Screenshots/projects/ReBriefcase/Screenshot_02.png">
+                        </div>
+                        <h2>Conflict detection</h2>
+                        <div class="InfoRow">
+                            <img src="Resources/Screenshots/projects/ReBriefcase/Screenshot_03.png">
+                            <p>
+                                The ReBriefcase conflict detection window differs greatly compared to the Windows briefcase conflict detection window. The goal was to make it easier to use quickly, and to make it more intuitive for causual users.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="RightPane">
+                    <div>
+                        <div class="NewsPane">
+                            <h1 class="PaneHeader">
+                                Project News
+                            </h1>
+                            <li>
+                                ReBriefcase is nearing completion
+                            </li>
+                            <li>
+                                ReBriefcase 2.0 has been published
+                            </li>
+                        </div>
+                        <div class="NewsPane" id="SoftwareBugsPane">
+                            <h1 class="PaneHeader" id="Critical">
+                                Known Bugs
+                            </h1>
+                            <li>
+                                Unknown
+                            </li>
+                        </div>
+                        <div class="TopicPane">
+                            <h1 class="PaneHeader">
+                                Download
+                            </h1>
+                            <div class="DownloadPane">
+                                <a href="https://github.com/TiForge/ReBriefcase/releases/latest/download/ReBriefcaseInstaller.exe" download>
+                                    <button class="DownloadButton">
+                                        <img src="Resources/Platforms/Download.png">
+                                        ReBriefcase
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="SidebarSpacer"></div>
+                    <div class="Disclaimer">
+                        <div style="flex: 1;">
+                            <h5>
+                                ReBriefcase is still considered "Beta" software. While obvious bugs have been sorted out, it is still possible that data can be lost. TiForge is not responsible if valuable data has been lost to ReBriefcase.
+                            </h5>
+                        </div>
+                        <div class="CopyrightInfo">
+                            <p>
+                                TiForge 2026
+                            </p>
+                            <img src="Resources/Profile.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
