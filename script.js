@@ -1,4 +1,9 @@
 
+let statusBarImg;
+let statusBarTxtName;
+let statusBarTxtType;
+let statusBarTxtExtra;
+
 function loadBars() {
     fetch("Resources/GlobalContent/sidebar.html").then(res => res.text()).then(data => {
         document.getElementById("Sidebar").innerHTML = data;
@@ -19,10 +24,55 @@ function loadBars() {
     fetch("Resources/GlobalContent/topbar.html").then(res => res.text()).then(data => {
         document.getElementById("Topbar").innerHTML = data;
     });
+
+    fetch("Resources/GlobalContent/statusbar.html").then(res => res.text()).then(data => {
+        document.getElementById("Statusbar").innerHTML = data;
+        
+        statusBarImg = document.querySelector(".StatusbarImg");
+        statusBarTxtName = document.querySelector(".StatusbarObjectInfoName");
+        statusBarTxtType = document.querySelector(".StatusbarObjectInfoType");
+        statusBarTxtExtra = document.querySelector(".StatusbarObjectInfoExtra");
+        
+        document.dispatchEvent(new Event("StatusLoaded"));
+    });
     
 }
 
 loadBars();
+
+document.addEventListener("StatusLoaded", () => {
+    updateStatusBarInfo();
+});
+
+// Statusbar
+
+async function updateStatusBarInfo(ImgPath = "", Name = "", Type = "", Extra = "") {
+    statusBarImg.src = ImgPath;
+    statusBarTxtName.innerText = Name;
+    statusBarTxtType.innerText = Type;
+    statusBarTxtExtra.innerText = Extra;
+}; 
+
+document.addEventListener("mouseover", (e) => {
+    const el = e.target.closest("[data-status-img]");
+
+    if (el) {
+        updateStatusBarInfo(
+            el.dataset.statusImg,
+            el.dataset.statusName,
+            el.dataset.statusType,
+            el.dataset.statusExtra
+        )
+    }
+});
+
+document.addEventListener("mouseout", (e) => {
+    const el = e.target.closest("[data-status-img]");
+
+    if (el) {
+        updateStatusBarInfo()
+    }
+});
 
 // Home animation
 const HomeAniIcons = [
@@ -80,7 +130,11 @@ function spawnIcon(row, direction, startX, index, arrayPos) {
 
     const iconImg = document.createElement("img");
     iconDiv.classList.add("AnimationBoxIcon");
-    iconImg.src = HomeAniIcons[Math.floor(Math.random() * HomeAniIcons.length)];
+
+    let imageIndex = Math.floor(Math.random() * HomeAniIcons.length);
+
+    iconImg.src = HomeAniIcons[imageIndex];
+    iconDiv.id = imageIndex;
 
     iconDiv.appendChild(iconImg);
     row.appendChild(iconDiv);
@@ -106,7 +160,7 @@ function animateHomeIcons() {
         if (icon.dir === "left") {
             icon.x -= HomeAniSpeed + icon.speedMul;
         } else {
-            icon.x += HomeAniSpeed - icon.speedMul;
+            icon.x += HomeAniSpeed + icon.speedMul;
         }
 
         const totalWidth = IconsPerRow * (HomeIconWidth + IconSpacing);
@@ -128,7 +182,16 @@ function animateHomeIcons() {
 }
 
 function updateIconImg(el) {
-    el.querySelector("img").src = HomeAniIcons[Math.floor(Math.random() * HomeAniIcons.length)];
+
+    let curImage = Number(el.id);
+    let newImage = Math.floor(Math.random() * HomeAniIcons.length);
+
+    while (newImage === curImage) { // Don't allow the same image to be chosen
+        newImage = Math.floor(Math.random() * HomeAniIcons.length);
+    }
+
+    el.querySelector("img").src = HomeAniIcons[newImage];
+    el.id = newImage;
 }
 
 function resetHomeAni() {

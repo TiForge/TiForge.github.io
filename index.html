@@ -16,12 +16,9 @@
             <div class="HomeBanner">
                 <img src="Resources/BannerBG.jpg">
                 <div class="HomeBannerAnimation">
-                    <div class="AnimationRow">
-                    </div>
-                    <div class="AnimationRow">
-                    </div>
-                    <div class="AnimationRow">
-                    </div>
+                    <div class="AnimationRow"></div>
+                    <div class="AnimationRow"></div>
+                    <div class="AnimationRow"></div>
                 </div>
 
                 <img src="Resources/Glass.png" class="HomeBannerGlass">
@@ -46,7 +43,12 @@
                         <h1 class="PaneHeader" id="ShoutoutPaneHeader">
                             Cool people
                         </h1>
-                        <a class="SoftwareButton" href="https://teknixstuff.com/" target="_blank">
+                        <a
+                            class="SoftwareButton" href="https://teknixstuff.com/" target="_blank"
+                            data-status-img="Resources/Shoutouts/teknixstuff.ico"
+                            data-status-name="Tech Stuff"
+                            data-status-type="Internet shortcut"
+                        >
                             <img src="Resources/Shoutouts/teknixstuff.ico">
                             <div class="SoftwareButtonText">
                                 <p class="SoftwareButtonTitle">
@@ -57,7 +59,12 @@
                                 </p>
                             </div>
                         </a>
-                        <a class="SoftwareButton" href="https://godotengine.org/" target="_blank">
+                        <a
+                            class="SoftwareButton" href="https://godotengine.org/" target="_blank"
+                            data-status-img="Resources/Shoutouts/Godot.png"
+                            data-status-name="Godot Team"
+                            data-status-type="Internet shortcut"
+                        >
                             <img src="Resources/Shoutouts/Godot.png">
                             <div class="SoftwareButtonText">
                                 <p class="SoftwareButtonTitle">
@@ -98,6 +105,9 @@
                         <li>
                             Made the "Cool people" pane stand out more
                         </li>
+                        <li>
+                            Added a working status bar
+                        </li>
                     </div>
                 </div>
                 <div class="RightColumn">
@@ -113,7 +123,12 @@
                         <h1 class="PaneHeader">
                             Projects
                         </h1>
-                        <a class="SoftwareButton" href="projects.rebriefcase.html">
+                        <a 
+                            class="SoftwareButton" href="projects.rebriefcase.html"
+                            data-status-img="Resources/HighRes/Software/Briefcase.png"
+                            data-status-name="ReBriefcase"
+                            data-status-type="Project"
+                        >
                             <img src="Resources/HighRes/Software/Briefcase.png">
                             <div class="SoftwareButtonText">
                                 <p class="SoftwareButtonTitle">
@@ -145,6 +160,8 @@
             </div>
         </div>
     </div>
-    
+    <div id="Statusbar">
+    </div>
+
     <script src="script.js"></script>
 </body>

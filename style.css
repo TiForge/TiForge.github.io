@@ -8,11 +8,13 @@
     --topbar-sha-color: #f0f0f0;
 
     --topbar-height: 31px;
-
+    --sidebar-width: 200px;
+    --statusbar-height: 55px;
 
     --sidebar-color: #eaf0f8;
-    --sidebar-high-color: #e6eef7;
+    --sidebar-high-color: #f3f5f8;
 
+    --statusbar-color: #f1f5fb;
     
     --blue-button-top-top-color: #498ac5;
     --blue-button-top-mid-color: #2d66b1;
@@ -82,7 +84,7 @@ button, a {
 
 .Content {
     width: 100%;
-    height: calc(100vh - var(--topbar-height));
+    height: calc(100vh - var(--topbar-height) - var(--statusbar-height));
     background: black;
     display: flex;
 }
@@ -118,10 +120,10 @@ button, a {
 }
 
 .AnimationRow {
+    display: flex;
     width: 100%;
     height: 30%;
     margin: 5px 0px 8px 0px;
-    display: flex;
 }
 
 .AnimationBox {
@@ -515,9 +517,9 @@ button, a {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    width: 200px;
-    min-width: 200px;
-    height: calc(100vh - var(--topbar-height));
+    width: var(--sidebar-width);
+    min-width: var(--sidebar-width);
+    height: calc(100vh - var(--topbar-height) - var(--statusbar-height));
     background: linear-gradient(240deg, var(--sidebar-color) 10%, var(--sidebar-high-color) 11%, var(--sidebar-color) 20%, var(--sidebar-color) 40%, var(--sidebar-high-color) 41%, var(--sidebar-color) 60%, var(--sidebar-color) 95%, var(--sidebar-high-color) 96%);
     border-right: 1px solid var(--topbar-bor-color);
     overflow: hidden;
@@ -600,4 +602,33 @@ button, a {
     background-color: transparent;
     margin-right: 7px;
     height: 20px;
+}
+
+.Statusbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid var(--topbar-bor-color);
+    height: var(--statusbar-height);
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 5px;
+    background: linear-gradient(180deg, #bac6d8, var(--statusbar-color) 5%);
+}
+
+.Statusbar img {
+    height: 100%;
+    margin: 0px 15px 0px 15px;
+}
+
+.StatusbarObjectInfo {
+    display: grid;
+    grid-template: auto auto / auto auto;
+    grid-gap: 5px;
+    font-size: 13px;
+    margin-left: 15px;
+}
+
+.StatusbarObjectInfoType, .StatusbarObjectInfoExtra {
+    color: #7f8794;
 }
